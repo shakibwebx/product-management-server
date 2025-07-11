@@ -22,7 +22,8 @@ const allowedOrigins = [
         callback(new Error('Not allowed by CORS'));
       }
     },
-    credentials: true
+    credentials: true,
+    methods: ['GET', 'POST', 'PATCH', 'DELETE'],
   }));
 
 // MongoDB connection
