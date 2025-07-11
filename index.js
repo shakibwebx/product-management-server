@@ -10,6 +10,7 @@ const port = process.env.PORT || 5001;
 // Middleware
 app.use(cors({
     origin: "http://localhost:3000",
+    origin: "https://products-management-client-pink.vercel.app,
     credentials: true
 }));
 app.use(express.json());
