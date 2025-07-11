@@ -8,12 +8,22 @@ const app = express();
 const port = process.env.PORT || 5001;
 
 // Middleware
-app.use(cors({
-    origin: "http://localhost:3000",
-    origin: "https://products-management-client-pink.vercel.app",
+const allowedOrigins = [
+    "http://localhost:3000",
+    "https://products-management-client-pink.vercel.app",
+    "https://crud-server-puce.vercel.app"
+  ];
+  
+  app.use(cors({
+    origin: function (origin, callback) {
+      if (!origin || allowedOrigins.indexOf(origin) !== -1) {
+        callback(null, true);
+      } else {
+        callback(new Error('Not allowed by CORS'));
+      }
+    },
     credentials: true
-}));
-app.use(express.json());
+  }));
 
 // MongoDB connection
 const uri = `mongodb+srv://${process.env.DB_USER}:${process.env.DB_PASS}@cluster0.wnfuk.mongodb.net/?retryWrites=true&w=majority&appName=Cluster0`;
