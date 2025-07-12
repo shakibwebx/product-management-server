@@ -9,7 +9,7 @@ const port = process.env.PORT || 5001;
 // Middleware
 const allowedOrigins = [
     "http://localhost:3000",
-    "https://products-management-client-pink.vercel.app",
+    "https://fatema-telecom-skb.vercel.app",
     "https://crud-server-puce.vercel.app"
 ];
 
