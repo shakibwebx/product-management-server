@@ -10,6 +10,7 @@ const port = process.env.PORT || 5001;
 const allowedOrigins = [
     "http://localhost:3000",
     "https://fatema-telecom-skb.vercel.app",
+    "https://products-management-client-pink.vercel.app",
     "https://crud-server-puce.vercel.app"
 ];
 
